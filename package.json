@@ -1,0 +1,41 @@
+{
+  "name": "fire-emblem-heroes-character-list",
+  "version": "1.0.0",
+  "description": "A simple and easy list of heroes, without propaganda, where you can mark which hero you've lvl 40 5 stared.",
+  "main": "./app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "monitor:app": "nodemon app/index.js",
+	"monitor:dev": "gulp serve",
+	"deploy": "gulp deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tweenn/fire-emblem-heroes-character-list.git"
+  },
+  "keywords": [
+    "fire",
+    "emblem",
+    "fire",
+    "emblem",
+    "heroes",
+    "feh"
+  ],
+  "author": "Felipe Zuntini <felipezuntini@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tweenn/fire-emblem-heroes-character-list/issues"
+  },
+  "homepage": "https://github.com/tweenn/fire-emblem-heroes-character-list#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "fs-extra": "^9.1.0",
+    "gulp": "^4.0.2",
+    "gulp-serve": "^1.4.0",
+    "gulp-surge": "^0.1.4",
+    "jquery": "^3.6.0",
+    "jsdom": "^16.5.3",
+    "node-fetch": "^2.6.1"
+  }
+}
