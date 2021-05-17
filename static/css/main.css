@@ -1,0 +1,176 @@
+:root {
+	--avatar-size: 60px;
+	--character-level-color: #ddad42;
+	--character-level-spacing: 2px;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mb-1 {
+	margin-bottom: 8px;
+}
+
+.ma-0 {
+	margin: 0 !important;
+}
+
+.pr-0 {
+	padding-right: 0 !important;
+}
+
+.pr-1 {
+	padding-right: 8px !important;
+}
+.pr-2 {
+	padding-right: 16px !important;
+}
+
+.captalize {
+	text-transform: capitalize;
+}
+
+.text-white {
+	color: white;
+}
+
+header .title-star {
+	padding-left: 4px;
+	width: 20px;
+}
+
+header .title-level {
+	padding-left: 4px;
+}
+
+.character-wrapper td:first-of-type {
+	width: var(--avatar-size);
+	height: var(--avatar-size);
+}
+
+.character-image__wrapper {
+	position: relative;
+}
+
+.character-wrapper .character-image__frame {
+	position: absolute;
+	top: -3px;
+	left: -3px;
+
+	width: calc(var(--avatar-size) + 6px);
+	height: calc(var(--avatar-size) + 6px);
+}
+
+.character-wrapper .character-image__avatar {
+	width: var(--avatar-size);
+	height: var(--avatar-size);
+}
+
+.character-wrapper .character-image__weapon-type {
+	position: absolute;
+	top: 7px;
+	left: -9px;
+
+	width: 18px;
+}
+
+.character-wrapper .character-image__movement-type {
+	position: absolute;
+	top: 28px;
+	left: -9px;
+
+	width: 18px;
+}
+
+.character-wrapper .character-image__five-stars {
+	position: absolute;
+	bottom: -8px;
+	left: 1px;
+	width: 100%;
+}
+
+.character-level .character-level__foreground,
+.character-level .character-level__background {
+	position: absolute;
+	top: -5px;
+	right: -10px;
+	margin-bottom: 0;
+	
+	font-weight: bolder;
+}
+
+.character-level .character-level__foreground {
+	display: none;
+	z-index: 3;
+}
+.character-level .character-level__background {
+	z-index: 2;
+
+	color: black;
+
+	text-shadow: calc(var(--character-level-spacing) * -1) var(--character-level-spacing) 0 var(--character-level-color),
+				var(--character-level-spacing) var(--character-level-spacing) 0 var(--character-level-color),
+				var(--character-level-spacing) calc(var(--character-level-spacing) * -1) 0 var(--character-level-color),
+				calc(var(--character-level-spacing) * -1) calc(var(--character-level-spacing) * -1) 0 var(--character-level-color);
+}
+
+.mdl-mini-footer {
+	padding: 16px !important;
+}
+
+@supports (-webkit-background-clip: text)
+	and (-webkit-text-fill-color: transparent)
+{
+	.character-level .character-level__foreground {
+		display: inline;
+		background: linear-gradient(180deg, rgba(232,191,68,1) 30%, rgba(189,129,36,1) 100%);
+		background-clip: text;
+		color: transparent;
+		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+	}
+
+	.character-level .character-level__background {
+		--character-level-color: black;
+		--character-level-spacing: 1px;
+	}
+
+	.title-level {
+		position: relative;
+	}
+
+	.title-level a {
+		position: relative;
+
+		background: linear-gradient(180deg, rgba(232,191,68,1) 30%, rgba(189,129,36,1) 100%);
+		background-clip: text;
+		color: transparent;
+		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+		z-index: 2;
+	}
+
+	.title-level::after {
+		content: "40";
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-left: 4px;
+		color: black;
+
+		z-index: 1;
+
+		--character-level-color: black;
+		--character-level-spacing: 1px;
+
+		text-shadow: calc(var(--character-level-spacing) * -1) var(--character-level-spacing) 0 var(--character-level-color),
+				var(--character-level-spacing) var(--character-level-spacing) 0 var(--character-level-color),
+				var(--character-level-spacing) calc(var(--character-level-spacing) * -1) 0 var(--character-level-color),
+				calc(var(--character-level-spacing) * -1) calc(var(--character-level-spacing) * -1) 0 var(--character-level-color);
+	}
+}
