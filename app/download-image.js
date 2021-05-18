@@ -11,7 +11,10 @@ module.exports = async (imageObject, imgFolderPath) => {
 
 	const imagePromises = Object.keys(imageObject).map(async (imageKey) => {
 		const extension = imageObject[imageKey].split('.').pop();
-		const imageName = `${imageKey}.${extension}`;
+		const imageName = `${imageKey}.${extension}`
+			.split(':').join('-')
+			.split('#').join('-')
+			.split("'").join('-');
 
 		return await fetch(imageObject[imageKey])
 			.then((res) => {

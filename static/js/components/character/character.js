@@ -4,12 +4,20 @@ import htm from 'https://unpkg.com/htm?module';
 const html = htm.bind(h);
 
 export default (props) => {
+	const nameFix = (name) => {
+		return name
+			.split(' ').join('-')
+			.split("'").join("-")
+			.split("#").join("-")
+			.split(":").join("-");
+	};
+
 	const charactereState = props.characterState;
 
 	const charName = props.characterData.name || '';
-	const avatar = charName.split(' ').join('-');
-	const weaponry = (props.characterData.weapon || '').split(' ').join('-');
-	const movement = (props.characterData.movement || '').split(' ').join('-');
+	const avatar = nameFix(charName);
+	const weaponry = nameFix(props.characterData.weapon || '');
+	const movement = nameFix(props.characterData.movement || '');
 
 	const frameIcon = charactereState === '' ? 'frame' : 'selected-frame';
 	const showLevel = charactereState === 'five-star-max-level';
@@ -39,7 +47,9 @@ export default (props) => {
 					<img class="character-image__avatar"
 						src="/img/ui/${frameIcon}.png"
 						alt="${charName}"
-						style="background-image: url('/img/characters/${avatar}.webp')"
+						style="${{
+							backgroundImage: `url('/img/characters/${avatar}.webp')`
+						}}"
 					/>
 					<img class="character-image__weapon-type" src="/img/weaponry/${weaponry}.png" alt="" />
 					<img class="character-image__movement-type" src="/img/movement/${movement}.png" alt="" />
