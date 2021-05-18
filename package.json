@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node app/index.js",
     "monitor:app": "nodemon app/index.js",
-	"monitor:dev": "gulp serve",
-	"deploy": "gulp deploy",
+    "monitor:dev": "gulp serve",
+	"minify:images": "gulp img",
+    "deploy": "gulp deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,8 +33,10 @@
     "browser-sync": "^2.26.14",
     "fs-extra": "^9.1.0",
     "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
     "gulp-serve": "^1.4.0",
     "gulp-surge": "^0.1.4",
+    "gulp-webp": "^4.0.1",
     "jquery": "^3.6.0",
     "jsdom": "^16.5.3",
     "node-fetch": "^2.6.1"
