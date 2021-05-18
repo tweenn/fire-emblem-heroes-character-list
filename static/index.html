@@ -15,7 +15,22 @@
 		<link rel="icon" href="favicon/favicon-32x32.png" type="image/png" sizes="32x32">
 		<link rel="icon" href="favicon/favicon-192x192.png" type="image/png" sizes="192x192">
 		<link rel="icon" href="favicon/favicon-256x256.png" type="image/png" sizes="256x256">
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NR5HZBMRC"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			if (window.document.domain.includes('zuntini.ninja')) {
+				gtag('config', 'G-3NR5HZBMRC');
+				console.log('Loaded g-tag for .ninja');
+			} else {
+				gtag('config', 'G-JZNVPNSEK8');
+				console.log('Loaded g-tag for .surge');
+			}
+		</script>
 	</head>
+
 
 	<body></body>
 </html>
