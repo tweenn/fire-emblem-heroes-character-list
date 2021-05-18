@@ -38,9 +38,19 @@ gulp.task('serve', serve({
 	port: 3000
 }));
 
-gulp.task('deploy', () => {
-	return surge({
-		project: './static', // Path to your static build directory
-		domain: 'feh-character-list.surge.sh' // Your domain or Surge subdomain
-	});
+gulp.task('deploy', (done) => {
+	const surgePath = './static';
+
+	Promise.all([
+		surge({
+			project: surgePath, // Path to your static build directory
+			domain: 'feh-character-list.zuntini.ninja' // Your domain or Surge subdomain
+		}),
+		surge({
+			project: surgePath, // Path to your static build directory
+			domain: 'feh-character-list.surge.sh' // Your domain or Surge subdomain
+		}),
+	]).then(() => {
+		done();
+	})
 })
