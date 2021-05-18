@@ -12,7 +12,11 @@ gulp.task('img:webp', () => {
 			alphaQuality: 100,
 			method: 6,
 			sns: 100,
-			lossless: true
+			lossless: true,
+			resize: {
+				width: 60,
+				height: 60
+			}
 		}))
 		.pipe(gulp.dest('./static/'));
 });
