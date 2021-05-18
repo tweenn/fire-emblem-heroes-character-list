@@ -36,8 +36,11 @@ export default (props) => {
 		<tr class="row character-wrapper" onClick="${click}">
 			<td>
 				<div class="character-image__wrapper">
-					<img class="character-image__frame" src="/img/ui/${frameIcon}.png" alt="" />
-					<img class="character-image__avatar" src="/img/characters/${avatar}.webp" alt="${charName}" />
+					<img class="character-image__avatar"
+						src="/img/ui/${frameIcon}.png"
+						alt="${charName}"
+						style="background-image: url('/img/characters/${avatar}.webp')"
+					/>
 					<img class="character-image__weapon-type" src="/img/weaponry/${weaponry}.png" alt="" />
 					<img class="character-image__movement-type" src="/img/movement/${movement}.png" alt="" />
 					${(!charactereState ?

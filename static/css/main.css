@@ -16,8 +16,8 @@
 	margin-bottom: 8px;
 }
 
-.ma-0 {
-	margin: 0 !important;
+.pa-0 {
+	padding: 0 !important;
 }
 
 .pr-0 {
@@ -49,26 +49,28 @@ header .title-level {
 }
 
 .character-wrapper td:first-of-type {
-	width: var(--avatar-size);
-	height: var(--avatar-size);
+	width: calc(var(--avatar-size) + 6px);
+	height: calc(var(--avatar-size) + 6px);
+
+	padding-left: 20px !important;
+	padding-right: 12px !important;
+}
+.character-wrapper td:nth-child(2) {
+	padding-left: 12px !important;
+	padding-right: 20px !important;
 }
 
 .character-image__wrapper {
 	position: relative;
 }
 
-.character-wrapper .character-image__frame {
-	position: absolute;
-	top: -3px;
-	left: -3px;
-
+.character-wrapper .character-image__avatar {
 	width: calc(var(--avatar-size) + 6px);
 	height: calc(var(--avatar-size) + 6px);
-}
 
-.character-wrapper .character-image__avatar {
-	width: var(--avatar-size);
-	height: var(--avatar-size);
+	background-size: var(--avatar-size) var(--avatar-size);
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .character-wrapper .character-image__weapon-type {
